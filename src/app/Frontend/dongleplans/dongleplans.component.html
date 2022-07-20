@@ -1,0 +1,25 @@
+<div class="container" style="padding-top: 25px; padding-left:50px ;">
+  <table class="table table-stripped table-bordered">
+    <thead>
+        <tr>
+            <th>Price</th>
+            <th>Validity</th>
+            <th>Description</th>
+        </tr>
+    </thead> 
+    <tbody>
+        <tr *ngFor="let p of dongleplans">
+            <td>Rs.{{p.price}}</td>
+            <td>{{p.validity}}</td>
+            <td>{{p.description}}</td>
+
+            <td> 
+                <a [routerLink]="['/plans/postpaidplans/chosen',p.id,'view']" class="btn btn-info">Click To Buy</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+</div>         

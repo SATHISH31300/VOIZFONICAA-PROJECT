@@ -1,0 +1,105 @@
+
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-50">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5 w-50">
+        
+          <div class="card bg-dark text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+              <div class="mb-md-1 mt-md-4 pb-2">
+               <h2 class="fw-bold mb-1 text-uppercase" style="font-family: 'Times New Roman', Times, serif; color: red; font-size: xx-large;">Sign Up</h2>
+                <p class="text-white mb-3" style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: larger;">Welcome To VoizFonica</p><hr>
+
+                <form [formGroup]="form" (ngSubmit)="signup()" >
+
+                  <div class="row">
+                <div class="form-outline form-white mb-4 col">
+                    <label class="form-label" for="firstname">Firstname</label>
+                    <input input formControlName="firstname" type="text" id="firstname" class="form-control form-control-lg"  />
+                    <div *ngIf="f['firstname'].touched && f['firstname'].invalid" style="color: red;">
+                      <div *ngIf="f['firstname'].errors && f['firstname'].errors['required']">Firstname is required.</div>
+                  </div>
+            
+                   
+                  </div>
+                  <div class="form-outline form-white mb-4 col">
+                    <label class="form-label" for="lastname">Lastname</label>
+                    <input input formControlName="lastname" type="text" id="lastname" class="form-control form-control-lg" />
+                    <div *ngIf="f['lastname'].touched && f['lastname'].invalid"  style="color: red;">
+                      <div *ngIf="f['lastname'].errors && f['lastname'].errors['required']">Lastname is required.</div>
+                  </div>
+                    
+                  </div>
+
+                </div>
+                <div class="row">
+                  <div class="form-outline form-white mb-4 col">
+                    <label class="form-label" for="email">Email</label>
+                    <input input formControlName="email" type="email" id="email" class="form-control form-control-lg"
+                    [ngClass]="{'is-invalid':submitted && f['email'].errors}"/>
+
+                    <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                        <div *ngIf="f['email'].errors['required']">EmailId cannot be blank!!   </div>
+                        <div *ngIf="f['email'].errors['email']">Enter a valid email id </div>                                
+                        </div>
+
+
+
+
+
+
+
+                    
+                    <!-- <div *ngIf="f['email'].touched && f['email'].invalid"  style="color: red;">
+                      <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
+                  </div>  -->
+                   
+                  </div>
+                  <div class="form-outline form-white mb-4 col">
+                    <label class="form-label" for="phone">Phone Number</label>
+                    <input input formControlName="phno" type="tel" id="phone" class="form-control form-control-lg" 
+                    [ngClass]="{'is-invalid':submitted && f['phno'].errors}">
+                            <div *ngIf="submitted && f['phno'].errors" class="invalid-feedback">
+                                <div *ngIf="f['phno'].errors['required']">Phone number cannot be blank!!</div>
+                                <!-- <div *ngIf="f['phno'].errors['phno']">Enter a valid phone number </div>   -->
+                                <div *ngIf="f['phno'].errors['pattern']">Only numbers allowed </div>                              
+                            </div>                   
+                    
+                  </div>
+
+                </div>
+
+                <div class="row">
+                
+                  <div class="form-outline form-white mb-4 col">
+                    <label class="form-label" for="password">Enter Password</label>
+
+                    <input [type]="inputtype" formControlName="password" type="password" id="password"  class="form-control form-control-lg" >                    
+
+                    <!-- <input input formControlName="password" type="password" id="password" class="form-control form-control-lg" /> -->
+
+                    <div *ngIf="f['password'].touched && f['password'].invalid"   style="color: red;">
+                      <div *ngIf="f['password'].errors && f['password'].errors['required']">Password is required.</div>
+                      
+                  </div><br>
+                  
+                  <input type="checkbox" (change)="showpassword($event)" class="form-check-input"> Show Password
+                    
+                  </div>                 
+                        
+                 
+                </div>               
+                
+                  <!-- <button class="btn btn-outline-dark btn-lg px-5" type="submit">Sign Up</button> -->
+                  <input type="submit" class="btn btn-primary btn-lg px-5 mt-1" value="Sign Up" [disabled]="!form.valid">
+                </form>
+                </div>
+                </div> 
+                
+              </div> 
+              
+            </div> 
+       </div>  
+
+        </div>   
+      </section>

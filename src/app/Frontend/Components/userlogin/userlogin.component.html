@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+     Login page
+</head>
+<body>
+<div class="vh-100 gradient-custom">
+    <div class="container py-5 h-75">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+
+                        <div class="mb-md-1 mt-md-4 pb-2">
+
+                            <h2 class="fw-bold  text-uppercase" style="color: red;">Login</h2>
+                            <p class="text-white mb-4" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ; font-size: larger;">Please enter your login and password!</p><hr>
+                            <form [formGroup]="form" (ngSubmit)="userLogin()">
+
+                            <div class="form-outline form-white mb-4">
+                                <!-- <label class="form-label" for="typeEmailX" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: larger;">Email</label>
+                                
+                                <input input formControlName="email"
+                                type="text" class="form-control form-control-lg" id="email" name="email"  
+                                [ngClass]="{'is-invalid':submitted && f['email'].errors}"/>
+
+                                <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                                <div *ngIf="f['email'].errors['required']">Email Id cannot be blank!!   </div>
+                                <div *ngIf="f['email'].errors['email']">Enter a valid email id 
+                                </div>                                
+                            </div>
+                                 -->
+                                 <div class="form-outline form-white mb-4 col">
+                                    <label class="form-label" for="email">Email</label>
+                                    <input input formControlName="email" type="email" id="email" class="form-control form-control-lg"
+                                    [ngClass]="{'is-invalid':submitted && f['email'].errors}"/>
+                
+                                    <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                                        <div *ngIf="f['email'].errors['required']">EmailId cannot be blank!!   </div>
+                                        <div *ngIf="f['email'].errors['email']">Enter a valid email id </div>                                
+                                        </div>
+                                 </div>
+
+
+
+
+
+
+                                <!-- <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+                                    <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
+                                </div> -->
+                        
+
+                               
+                            </div>
+
+
+                            <!-- <div class="form-outline form-white mb-4">
+                                <label class="form-label" for="typePasswordX">Password</label>
+
+                                <!-- <input formControlName="password"
+                                type="password" id="password" name="password" class="form-control form-control-lg" /> 
+                                <input [type]="inputtype" formControlName="password" type="password" id="password"  class="form-control form-control-lg" ><br>
+                                <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
+                                    <div *ngIf="f['password'].errors && f['password'].errors['required']">Password is required.</div>
+                                </div>
+                        
+
+                                <input type="checkbox" (change)="showpassword($event)" class="form-check-input"> Show Password
+                                
+                            </div> -->
+                            <div class="form-outline form-white mb-4 col">
+                                <label class="form-label" for="password">Enter Password</label>
+            
+                                <input [type]="inputtype" formControlName="password" type="password" id="password"  class="form-control form-control-lg" >
+                                
+            
+                                <!-- <input input formControlName="password" type="password" id="password" class="form-control form-control-lg" /> -->
+                                <div *ngIf="f['password'].touched && f['password'].invalid" style="color: red;">
+                                  <div *ngIf="f['password'].errors && f['password'].errors['required']">Password is required.</div>
+                                  
+                              </div><br>
+                              <input type="checkbox" (change)="showpassword($event)" class="form-check-input"> Show Password
+                                
+                              </div> 
+
+
+
+
+                            <p class="small mb-2 pb-lg-2"><a class="text-white-25" href="#!">Forgot password?</a></p>
+
+                            <input type="submit" class="btn btn-primary btn-lg px-5 mt-3" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" value="Log In" [disabled]="!form.valid" ><div style="color: red">
+                                {{errroMessage}}
+                            </div>
+                            
+                            </form>
+
+
+                        </div>
+
+                        <div>
+                            <p class="mt-4">Don't have an account? <a href="/signup" class="text-white-25 fw-bold">Sign
+                                    Up</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
